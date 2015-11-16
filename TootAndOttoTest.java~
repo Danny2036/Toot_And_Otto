@@ -1,0 +1,61 @@
+/** @author Daniel McKinnon
+  */
+import junit.framework.TestCase;
+
+public class TootAndOttoTest extends TestCase{
+  
+  //The board to use for the tests of the methods
+  this.board = new JPanel(new GridLayout(row, column));
+  window.setContentPane(board);
+  window.setSize(100*row, 100*column);   
+  this.button = new JButton[row][column];
+  for (int i = 0; i <= row - 1; i++) {
+    for (int j = 0; j <= column - 1; j++) {
+      button[i][j] = new JButton();
+      button[i][j].addActionListener(this);
+      this.board.add(button[i][j]);
+      button[i][j].setText("");
+    }
+  }
+  
+  /** @Test
+    */
+  public void testFindColumn(){
+    assertEquals(1, TootAndOtto.findColumn(button[1][1]));
+    assertEquals(4, TootAndOtto.findColumn(button[1][4]));
+    assertEquals(6, TootAndOtto.findColumn(button[1][6]));
+  }
+  
+  /** @Test
+    */
+  public void testFindRow(){
+    assertEquals(1, TootAndOtto.findColumn(button[1][1]));
+    assertEquals(4, TootAndOtto.findColumn(button[4][4]));
+    assertEquals(6, TootAndOtto.findColumn(button[6][6]));
+  }
+  
+  /** @Test
+    */
+  public void testAddText(){
+    assertEquals("T",  (TootAndOtto.addText(button[1][1], 1)).getText(());
+    assertEquals("O",  (TootAndOtto.addText(button[2][1], 1)).getText(());
+    assertEquals("T",  (TootAndOtto.addText(button[3][1], 1)).getText(());
+    assertEquals("O",  (TootAndOtto.addText(button[4][1], 1)).getText(());
+  }
+  
+  /** @Test
+    */
+  public void testAddText(){
+    assertEquals("One",  HW3. containsWord("My what a lovely day", "hate     love"));
+    assertEquals(true,  HW3.containsWord("StopThat!!", "! ? *"));
+    assertEquals(false,  HW3. containsWord("Guess who is coming to dinner?", "Who Dinner"));
+    assertEquals(false,  HW3.containsWord("One last example", ""));
+  }
+  
+  /** @Test
+    * 
+    public void testWordSearch(){
+    assertEquals("HO West ale stern",  HW3.wordSearch(String [] board = {"Case", "Western", "Reserve", "University", "Cleveland, OH"}, "HO CWRU west West ale stern sac")));
+    }
+    */
+}
